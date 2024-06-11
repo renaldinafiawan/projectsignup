@@ -1,195 +1,122 @@
-@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
-body {
-  color: #5D6063;
-  background-color: #EAEDF0;
-  font-family: "Helvetica", "Arial", sans-serif;
-  font-size: 16px;
-  line-height: 1.3;
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+/* added to reset to clear the accessible border behaviour in chrome update */
+*,
+*:focus,
+*:hover {
+  outline: none;
+}
+
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  letter-spacing: 0.015rem;
+  -webkit-font-smoothing: antialiased;
+  color: #081d0a;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* font from fontsquirrel generator */
+
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+
+body {
+  font-family:  "Ubuntu Sans Mono", system-ui;
+}
+.form {
+  display: flex;
+}
+.banner-div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-
-
-.speaker-form-header {
-  text-align: center;
-  background-color: #F6F7F8;
-  border: 1px solid #D6D9DC;
-  border-radius: 3px;
+  position: relative;
+  height: 100vh;
+  width: 40%;
+  background-image: url(./background.jpg);
+  background-size: 100%;
   
-  width: 80%;
-  margin: 40px ;
-  padding: 50px;
 }
 
-.speaker-form-header h1 {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-
-.form-row {
-  margin-bottom: 40px;
+.logo-div {
   display: flex;
-  justify-content: flex-start;
-   flex-direction: column;
-   flex-wrap: wrap;
-
+  justify-content: center;
+  align-items: center;
+  margin-top: 50%;
+  gap: 2%;
+  background-color: #081d0a80;
+  height: 15%;
+}
+.logo-img-div {
+  height: 80%;
+  width: auto;
 }
 
-.form-row input[type='text']   {
-  background-color: #FFFFFF;
-  border: 1px solid #d6d9dc;
-  border-radius: 3px;
+.logo-img {
   width: 100%;
-  padding: 7px;
-  font-size: 14px;
-
-
+  height: 100%;
 }
 
-.form-row label {
-  margin-bottom: 15px;
+.logo-text {
+  font-family:  "Ubuntu Sans Mono", system-ui;
+  font-size: 5rem;
+  color: beige;
+  flex: 0;
 }
 
-@media only screen and (min-width: 700px) {
-  .speaker-form-header, .speaker-form {
-    width: 600px;
-
-  }
-  .form-row instructions {
-    margin-left: 120px;
-  }
-  .form-row {
-    flex-direction: row;
-    align-items: flex-start; /* to avoid stretching*/
-    margin-bottom: 20px;
-
-  }
-  .form-row input[type='text'], 
-  .form-row input[type='email'] , 
-  .form-row select , 
-  .form-row textarea {
-    width: 250px;
-    height: initial;
-    background-color: #FFFFFF;
-    padding: 7px;
-
-  }
-
-  .form-row label {
-    text-align: right;
-    width: 120px;
-    margin-top: 7px;
-    padding-right: 20px;
-                    
-  }
-  .form-row .checkbox-label {
-    margin-left: 120px;
-    width: auto;
-  }
-  .form-row button {
-    margin-left: 120px;
-  }
-}
-
-.form-row input[type='text']:invalid,
-.form-row input[type='email']:invalid {
-  border: 1px solid #D55C5F;
-  color: #D55C5F;
-  box-shadow: none; /* Remove default red glow in Firefox */
-}
-
-.legacy-form-row {
-  border: none;
-  margin-bottom: 40px;
-}
-
-.legacy-form-row legend {
-  margin-bottom: 15px;
-}
-
-.legacy-form-row .radio-label {
-  display: block;
-  font-size: 14px;
-  padding: 0 20px 0 10px;
-}
-
-.legacy-form-row input[type='radio'] {
-  margin-top: 2px;
-}
-  
-.legacy-form-row .radio-label,
-.legacy-form-row input[type='radio'] {
-  float: left;
-}
-
-@media only screen and (min-width: 700px) {
-  /* ... */
-  .legacy-form-row {
-    margin-bottom: 10px;
-  }
-  .legacy-form-row legend {
-    width: 120px;
-    text-align: right;
-    padding-right: 20px;
-  }
-  .legacy-form-row legend {
-    float: left;
-  }
-}
-
-.form-row select {
+.credit {
+  position: absolute;
+  text-align: center;
+  color: beige;
+  bottom: 0.5%;
   width: 100%;
-  padding: 5px;
-  font-size: 14px;
-  webkit-appearance: none;
-
+  background-color: #11a0c7aa;
 }
 
-.form-row textarea {
-  font-family: "Helvetica", "Arial", sans-serif;
-  font-size: 14px;
-
-  border: 1px solid #D6D9DC;
-  border-radius: 3px;
-
-  min-height: 200px;
-  margin-bottom: 10px;
-  padding: 7px;
-  resize: none;
+a {
+  color: #798553;
+  font-weight: 800;
+  text-decoration: none;
 }
 
-.form-row .instructions {
-  color: #999999;
-  font-size: 14px;
-  margin-bottom: 30px;
+a:hover {
+  text-decoration: underline;
+  color: #270f5f;
 }
 
-.form-row .checkbox-label {
-  margin-bottom: 0;
-}
 
-.form-row button {
-  font-size: 16px;
-  font-weight: bold;
-
-  color: #FFFFFF;
-  background-color: #5995DA;
-
-  border: none;
-  border-radius: 3px;
-
-  padding: 10px 40px;
-  cursor: pointer;
-}
-
-.form-row button:hover {
-  background-color: #76AEED;
-}
-
-.form-row button:active {
-  background-color: #407FC7;
-}
