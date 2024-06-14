@@ -55,17 +55,21 @@ h6 {
 /* font from fontsquirrel generator */
 
 @import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-  font-family:  "Ubuntu Sans Mono", system-ui;
+  font-family:  "Roboto Condensed", system-ui;
 }
 .form {
   display: flex;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(184, 184, 184);
 }
 .banner-div {
   display: flex;
   flex-direction: column;
-  position: relative;
+  position:relative;
   height: 100vh;
   width: 40%;
   background-image: url(./background.jpg);
@@ -105,18 +109,186 @@ body {
   color: beige;
   bottom: 0.5%;
   width: 100%;
-  background-color: #11a0c7aa;
+  background-color: #09121f;
 }
 
 a {
-  color: #798553;
+  color: #09121f;
   font-weight: 800;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
-  color: #270f5f;
+  
+  color: #dfdeff;
 }
 
 
+.form-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5%;
+  position: relative;
+}
+
+.form-text-div{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 2rem;
+}
+
+.form-first-p{
+  margin-top: 4rem;
+  text-indent: 10ch;
+}
+
+.form-cta {
+  font-weight: 100%;
+
+}
+
+.form-section {
+padding-left: 4rem;
+padding-right: 10rem;
+background-color: #9dbbe5;
+
+}
+
+.form-inputs-div {
+  display :flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+
+  width: 100%;
+  position: relative;
+
+}
+
+.input-div {
+  display :flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 90%;
+}
+
+.input-div > input {
+  border: 1px solid #bb664f;
+  border-radius: 0.25rem;
+  padding-left: 1ch;
+  font-weight: 500;
+}
+
+.input-div > input:focus-visible {
+  border: 1px solid #bba04f;
+  box-shadow: 0.15rem 0.15rem 0.15rem #cfb26e;
+}
+
+.no-instructions {
+  margin-bottom: 1em;
+}
+
+.signup-div{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  
+ 
+}
+
+.signup-div > button {
+  background-color: #bdbdff;
+  color: #081d0a;
+  font-weight: 800;
+  padding: 0.1rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  width: fit-content;
+  font-size: clamp(1rem, 5vw, 1.5rem);
+  box-shadow: 0.25rem 0.25rem 0.2rem #b6c0b7;
+  
+}
+
+.signup-div > button:active{
+  box-shadow: none;
+  transform: translate(0.15rem, 0.15rem)
+}
+
+.signup-div > p {
+  padding-left: 0.1rem;
+
+}
+
+p {
+  width: 55ch;
+}
+.instructions {
+  font-size: 0.75em;
+  
+}
+
+.page-footer {
+  text-align: center;
+  background-color: #ffffff;
+  color: #b6c0b7;
+  margin:auto 0 0;
+  width: 100%;
+}
+
+input:valid, input:valid:focus {
+  border: 1px solid #c2d2a4;
+  box-shadow: 0.15rem 0.15rem 0.15rem #b6c0b7;
+
+}
+
+input:invalid:focus{
+  border: 1px solid #e59c2b;
+  box-shadow: 0.15rem, 0.15rem 0.15rem #ab7421;
+  
+}
+input:invalid:focus + .instructions {
+  color: #e59c2b;
+
+}
+
+@media screen and (max-width: 800px) {
+  .form {
+    flex-direction: column;
+  }
+  .banner-div{
+    width: 100%;
+
+  }
+
+  p {
+    width: 90%;
+  
+  }
+
+  .form-cta {
+    margin-bottom: 2rem;
+  }
+
+  .signup-div > button {
+    margin-top: 4rem;
+  }
+
+  .signup-div > p {
+    margin-bottom: 4rem;
+  }
+}
+
+/*for very small screens to adjust layout of inputs */
+@media screen and (max-width: 500px) {
+  .form-inputs-div {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .input-div {
+    width: 100%;
+  }
+}
